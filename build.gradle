@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+
+}
+
+group 'io.hithub.qaguru'
+version '1.8-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation ("org.assertj:assertj-core:3.19.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
+}
+
+compileTestJava {
+    options.encoding = "UTF-8"
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+}
+
+
